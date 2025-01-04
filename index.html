@@ -17,25 +17,41 @@
     <main>
         <div>
             <label for="nombreUsuario">Nombre de Usuario:</label>
-            <input type="text" id="nombreUsuario">
-            <button id="confirmarNombre">Confirmar Nombre</button>
+            <input type="text" id="nombreUsuario" class="form-control">
+            <button id="confirmarNombre" class="btn btn-success mt-2">Confirmar Nombre</button>
         </div>
-        <div>
+
+        <div class="mt-4">
+            <h2>Conversión de ARS a USD</h2>
             <label for="tipoDeCambio">Tipo de Cambio:</label>
-            <select id="tipoDeCambio">
+            <select id="tipoDeCambio" class="form-select">
                 <option value="oficial">Oficial</option>
                 <option value="blue">Blue</option>
                 <option value="mep">MEP</option>
                 <option value="tarjeta">Tarjeta</option>
                 <option value="ccl">CCL</option>
             </select>
-        </div>
-        <div>
             <label for="cantidadARS">Cantidad en ARS:</label>
-            <input type="number" id="cantidadARS">
+            <input type="number" id="cantidadARS" class="form-control">
+            <button id="convertirARS" class="btn btn-success mt-4">Convertir a USD</button>
+            <p id="resultadoARS"></p>
         </div>
-        <button id="convertir">Convertir</button>
-        <p id="resultado"></p>
+
+        <div class="mt-4">
+            <h2>Conversión de USD a ARS</h2>
+            <label for="tipoDeCambioInverso">Tipo de Cambio:</label>
+            <select id="tipoDeCambioInverso" class="form-select">
+                <option value="oficial">Oficial</option>
+                <option value="blue">Blue</option>
+                <option value="mep">MEP</option>
+                <option value="tarjeta">Tarjeta</option>
+                <option value="ccl">CCL</option>
+            </select>
+            <label for="cantidadUSD">Cantidad en USD:</label>
+            <input type="number" id="cantidadUSD" class="form-control">
+            <button id="convertirUSD" class="btn btn-success mt-4">Convertir a ARS</button>
+            <p id="resultadoUSD"></p>
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="./js/main.js" type="module"></script>
