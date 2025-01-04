@@ -58,3 +58,14 @@ input, select, button {
         font-size: 1.2em;
     }
 }
+footer{
+    background-color: #f9d84b;
+    color: #28283d;
+    padding: 0px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
