@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conversor de ARS a USD">
+    <meta name="keywords" content="conversor, ARS, USD, tipo de cambio">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Conversor ARS a USD</title>
+</head>
+<body>
+    <header>
+        <h1>Conversor de ARS a USD</h1>
+    </header>
+    <main>
+        <div>
+            <label for="nombreUsuario">Nombre de Usuario:</label>
+            <input type="text" id="nombreUsuario">
+            <button id="confirmarNombre">Confirmar Nombre</button>
+        </div>
+        <div>
+            <label for="tipoDeCambio">Tipo de Cambio:</label>
+            <select id="tipoDeCambio">
+                <option value="oficial">Oficial</option>
+                <option value="blue">Blue</option>
+                <option value="mep">MEP</option>
+                <option value="tarjeta">Tarjeta</option>
+                <option value="ccl">CCL</option>
+            </select>
+        </div>
+        <div>
+            <label for="cantidadARS">Cantidad en ARS:</label>
+            <input type="number" id="cantidadARS">
+        </div>
+        <button id="convertir">Convertir</button>
+        <p id="resultado"></p>
+    </main>
+    <script src="./js/main.js" type="module"></script>
+</body>
+</html>

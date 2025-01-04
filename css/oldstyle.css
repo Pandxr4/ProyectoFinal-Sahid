@@ -1,0 +1,32 @@
+body {
+    background-color: #28283d;
+    font-family: Arial, sans-serif;
+    color: #f9d84b;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f9d84b;
+    color: #28283d;
+    padding: 10px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select, button {
+    margin-bottom: 10px;
+}
+
+#resultado {
+    margin-top: 20px;
+    font-weight: bold;
+}
