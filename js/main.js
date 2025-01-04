@@ -40,7 +40,7 @@ function iniciarConversor() {
     const tipoDeCambio = tipoDeCambioSelect.value;
     const cantidadARS = parseFloat(cantidadARSInput.value);
     const resultado = convertirARS(cantidadARS, tipoDeCambio);
-    resultadoP.innerText = `${cantidadARS} ARS son equivalentes a ${resultado} USD según el tipo de cambio ${tipoDeCambio} al día de hoy.`;
+    resultadoP.innerText = `${cantidadARS} ARS son equivalentes a ${resultado} USD según el tipo de cambio al día de hoy.`;
   });
 }
 
