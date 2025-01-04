@@ -13,7 +13,7 @@ body {
 header {
     background-color: #f9d84b;
     color: #28283d;
-    padding: 10px 0;
+    padding: 5px 0;
     width: 100%;
 }
 
@@ -59,8 +59,8 @@ input, select, button {
     }
 }
 footer{
-    background-color: #f9d84b;
-    color: #28283d;
+    background-color: #28283d;
+    color: #f9d84b;
     padding: 0px 0;
     width: 100%;
     position: fixed;
