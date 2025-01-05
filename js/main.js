@@ -47,11 +47,19 @@ function iniciarConversor() {
 
   let nombreUsuario = '';
 
+  // Cargar el nombre de usuario desde el local storage
+  if (localStorage.getItem('nombreUsuario')) {
+    nombreUsuario = localStorage.getItem('nombreUsuario');
+    alert("Bienvenido de nuevo, " + nombreUsuario);
+  }
+
   confirmarNombreBtn.addEventListener('click', () => {
     nombreUsuario = nombreUsuarioInput.value;
     if (nombreUsuario === "") {
       alert("Tenés que poner un nombre de usuario para continuar.");
     } else {
+      // Guardar el nombre de usuario en el local storage
+      localStorage.setItem('nombreUsuario', nombreUsuario);
       alert("El nombre de usuario ingresado es: " + nombreUsuario);
     }
   });
@@ -61,6 +69,15 @@ function iniciarConversor() {
     const cantidadARS = parseFloat(cantidadARSInput.value);
     const resultado = convertirARS(cantidadARS, tipoDeCambio);
     resultadoARSP.innerText = `${cantidadARS} ARS son equivalentes a ${resultado} USD según el tipo de cambio ${tipoDeCambio} al día de hoy.`;
+
+    // Guardar la conversión en local storage
+    const conversion = {
+      tipoDeCambio: tipoDeCambio,
+      cantidadARS: cantidadARS,
+      resultado: resultado,
+      fecha: new Date().toLocaleString()
+    };
+    guardarConversion('conversionesARS', conversion);
   });
 
   convertirUSDBtn.addEventListener('click', () => {
@@ -68,7 +85,26 @@ function iniciarConversor() {
     const cantidadUSD = parseFloat(cantidadUSDInput.value);
     const resultado = convertirUSD(cantidadUSD, tipoDeCambio);
     resultadoUSDP.innerText = `${cantidadUSD} USD son equivalentes a ${resultado} ARS según el tipo de cambio ${tipoDeCambio} al día de hoy.`;
+
+    // Guardar la conversión en local storage
+    const conversion = {
+      tipoDeCambio: tipoDeCambio,
+      cantidadUSD: cantidadUSD,
+      resultado: resultado,
+      fecha: new Date().toLocaleString()
+    };
+    guardarConversion('conversionesUSD', conversion);
   });
+}
+
+// Función para guardar las conversiones en local storage
+function guardarConversion(key, conversion) {
+  let conversiones = [];
+  if (localStorage.getItem(key)) {
+    conversiones = JSON.parse(localStorage.getItem(key));
+  }
+  conversiones.push(conversion);
+  localStorage.setItem(key, JSON.stringify(conversiones));
 }
 
 // Iniciar el conversor cuando el DOM esté completamente cargado
