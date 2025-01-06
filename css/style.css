@@ -1,7 +1,7 @@
 body {
-    background-color: #28283d;
+    background-color: #352504;
     font-family: Arial, sans-serif;
-    color: #f9d84b;
+    color: #928941;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -11,8 +11,8 @@ body {
 }
 
 header {
-    background-color: #f9d84b;
-    color: #28283d;
+    background-color: #928941;
+    color: #352504;
     padding: 5px 0;
     width: 100%;
 }
@@ -59,8 +59,8 @@ input, select, button {
     }
 }
 footer{
-    background-color: #28283d;
-    color: #f9d84b;
+    background-color: #352504;
+    color: #928941;
     padding: 0px 0;
     width: 100%;
     position: fixed;
