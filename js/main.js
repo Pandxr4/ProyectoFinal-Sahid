@@ -1,8 +1,6 @@
 import { tiposDeCambio } from "./data.js";
 import { mostrarAlerta } from "./alertas.js";
 
-// El resto de tus funciones como convertirARS, convertirUSD...
-
 // Función para iniciar el conversor
 function iniciarConversor() {
   const nombreUsuarioInput = document.getElementById('nombreUsuario');
