@@ -1,8 +1,6 @@
 import { tiposDeCambio } from "./data.js";
 import { mostrarAlerta } from "./alertas.js";
 
-// El resto de tus funciones como convertirARS, convertirUSD...
-
 // Función para iniciar el conversor
 function iniciarConversor() {
   const nombreUsuarioInput = document.getElementById('nombreUsuario');
@@ -21,17 +19,17 @@ function iniciarConversor() {
   // Cargar el nombre de usuario desde el local storage
   if (localStorage.getItem('nombreUsuario')) {
     nombreUsuario = localStorage.getItem('nombreUsuario');
-    mostrarAlerta('success', 'Bienvenido de nuevo', `Hola de nuevo, ${nombreUsuario}`);
+    mostrarAlerta('success', 'Bienvenido de nuevo', `Hola de nuevo, ${nombreUsuario}`, 'rgb(220, 220, 220)');
   }
 
   confirmarNombreBtn.addEventListener('click', () => {
     nombreUsuario = nombreUsuarioInput.value;
     if (nombreUsuario === "") {
-      mostrarAlerta('error', 'Error', 'Tenés que poner un nombre de usuario para continuar.');
+      mostrarAlerta('error', 'Error', 'Tenés que poner un nombre de usuario para continuar.', 'rgb(255, 200, 200)');
     } else {
       // Guardar el nombre de usuario en el local storage
       localStorage.setItem('nombreUsuario', nombreUsuario);
-      mostrarAlerta('success', 'Nombre de usuario', `El nombre de usuario ingresado es: ${nombreUsuario}`);
+      mostrarAlerta('success', 'Nombre de usuario', `El nombre de usuario ingresado es: ${nombreUsuario}`, 'rgb(200, 255, 200)');
     }
   });
 
