@@ -1,6 +1,34 @@
 import { tiposDeCambio } from "./data.js";
 import { mostrarAlerta } from "./alertas.js";
 
+// Función para encontrar el valor de tipo de cambio
+function obtenerTasa(tipo) {
+  const moneda = tiposDeCambio.find(moneda => moneda.tipo === tipo);
+  if (!moneda) {
+    mostrarAlerta('error', 'Error', 'El tipo de cambio seleccionado no es válido.', 'rgb(255, 200, 200)');
+    return null;
+  }
+  return moneda.valor;
+}
+
+// Función para convertir ARS a USD
+function convertirARS(cantidad, tipoDeCambio) {
+  const tasa = obtenerTasa(tipoDeCambio);
+  if (tasa === null) {
+    return 0;
+  }
+  return (cantidad / tasa).toFixed(2);
+}
+
+// Función para convertir USD a ARS
+function convertirUSD(cantidad, tipoDeCambio) {
+  const tasa = obtenerTasa(tipoDeCambio);
+  if (tasa === null) {
+    return 0;
+  }
+  return (cantidad * tasa).toFixed(2);
+}
+
 // Función para iniciar el conversor
 function iniciarConversor() {
   const nombreUsuarioInput = document.getElementById('nombreUsuario');
