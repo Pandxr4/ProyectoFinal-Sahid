@@ -1,36 +1,7 @@
 import { tiposDeCambio } from "./data.js";
+import { mostrarAlerta } from "./alertas.js";
 
-/**
- * Función para convertir ARS a USD según el tipo de cambio.
- * @param {number} cantidad - La cantidad de ARS a convertir.
- * @param {string} tipoDeCambio - El tipo de cambio a utilizar.
- * @returns {string|number} - El resultado de la conversión o un mensaje de error.
- */
-function convertirARS(cantidad, tipoDeCambio) {
-  const cambio = tiposDeCambio.find(cambio => cambio.tipo === tipoDeCambio);
-  if (cambio) {
-    const resultado = cantidad / cambio.valor;
-    return resultado.toFixed(2);
-  } else {
-    return 'Tipo de cambio no válido';
-  }
-}
-
-/**
- * Función para convertir USD a ARS según el tipo de cambio.
- * @param {number} cantidad - La cantidad de USD a convertir.
- * @param {string} tipoDeCambio - El tipo de cambio a utilizar.
- * @returns {string|number} - El resultado de la conversión o un mensaje de error.
- */
-function convertirUSD(cantidad, tipoDeCambio) {
-  const cambio = tiposDeCambio.find(cambio => cambio.tipo === tipoDeCambio);
-  if (cambio) {
-    const resultado = cantidad * cambio.valor;
-    return resultado.toFixed(2);
-  } else {
-    return 'Tipo de cambio no válido';
-  }
-}
+// El resto de tus funciones como convertirARS, convertirUSD...
 
 // Función para iniciar el conversor
 function iniciarConversor() {
@@ -50,17 +21,17 @@ function iniciarConversor() {
   // Cargar el nombre de usuario desde el local storage
   if (localStorage.getItem('nombreUsuario')) {
     nombreUsuario = localStorage.getItem('nombreUsuario');
-    alert("Bienvenido de nuevo, " + nombreUsuario);
+    mostrarAlerta('success', 'Bienvenido de nuevo', `Hola de nuevo, ${nombreUsuario}`, 'rgb(220, 220, 220)');
   }
 
   confirmarNombreBtn.addEventListener('click', () => {
     nombreUsuario = nombreUsuarioInput.value;
     if (nombreUsuario === "") {
-      alert("Tenés que poner un nombre de usuario para continuar.");
+      mostrarAlerta('error', 'Error', 'Tenés que poner un nombre de usuario para continuar.', 'rgb(255, 200, 200)');
     } else {
       // Guardar el nombre de usuario en el local storage
       localStorage.setItem('nombreUsuario', nombreUsuario);
-      alert("El nombre de usuario ingresado es: " + nombreUsuario);
+      mostrarAlerta('success', 'Nombre de usuario', `El nombre de usuario ingresado es: ${nombreUsuario}`, 'rgb(200, 255, 200)');
     }
   });
 

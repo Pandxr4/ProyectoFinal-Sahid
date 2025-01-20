@@ -8,57 +8,57 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-header {
+  }
+  
+  header {
     background-color: #173323;
     color: #173323;
     padding: 5px 0;
     width: 100%;
-}
-
-main {
+  }
+  
+  main {
     padding: 20px;
     width: 100%;
-}
-
-label {
+  }
+  
+  label {
     display: block;
     margin: 10px 0 5px;
     text-align: left;
-}
-
-input, select, button {
+  }
+  
+  input, select, button {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     box-sizing: border-box;
-}
-
-#resultado {
+  }
+  
+  #resultado {
     margin-top: 20px;
     font-weight: bold;
-}
-
-/* Estilos para dispositivos pequeños */
-@media (max-width: 600px) {
+  }
+  
+  /* Estilos para dispositivos pequeños */
+  @media (max-width: 600px) {
     main {
-        padding: 10px;
+      padding: 10px;
     }
-
+  
     input, select, button {
-        font-size: 1em;
+      font-size: 1em;
     }
-}
-
-/* Estilos para dispositivos medianos y grandes */
-@media (min-width: 601px) {
+  }
+  
+  /* Estilos para dispositivos medianos y grandes */
+  @media (min-width: 601px) {
     input, select, button {
-        font-size: 1.2em;
+      font-size: 1.2em;
     }
-}
-
-footer {
+  }
+  
+  footer {
     background-color: #f8be00;
     color: #2b1719;
     padding: 0px 0;
@@ -68,9 +68,44 @@ footer {
     left: 0;
     right: 0;
     text-align: center;
-}
-
-.navbar {
+  }
+  
+  .navbar {
     background-color: #f8be00;
     color: #2b1719;
-}
+  }
+
+  .mi-titulo {
+    color: #e0e0e0; /* Color del título */
+    font-family: 'Arial', sans-serif; /* Fuente del título */
+    font-size: 24px; /* Tamaño del título */
+  }
+  
+  .mi-texto {
+    color: #e0e0e0; /* Color del texto */
+    font-family: 'Arial', sans-serif; /* Fuente del texto */
+    font-size: 18px; /* Tamaño del texto */
+  }
+  
+  .mi-popup {
+    border: 2px solid #2b1719; /* Borde del cuadro de diálogo */
+    border-radius: 10px; /* Radio del borde */
+    background-color: #173323; /* Color de fondo del popup */
+  }
+  
+  .mi-confirmar-boton {
+    background-color: #65743a; /* Color de fondo del botón de confirmar */
+    color: #fff; /* Color del texto del botón de confirmar */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Radio del borde */
+    padding: 10px 20px; /* Espaciado */
+  }
+  
+  .mi-cancelar-boton {
+    background-color: #d33; /* Color de fondo del botón de cancelar */
+    color: #fff; /* Color del texto del botón de cancelar */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Radio del borde */
+    padding: 10px 20px; /* Espaciado */
+  }
+  

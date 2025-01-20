@@ -1,8 +1,8 @@
 export const tiposDeCambio = [
-    { tipo: 'oficial', valor: 1059.50 },
-    { tipo: 'blue', valor: 1250 },
-    { tipo: 'mep', valor: 1163.80 },
-    { tipo: 'tarjeta', valor: 1377.35 },
-    { tipo: 'ccl', valor: 1184.15 },
+    { tipo: 'oficial', valor: 1063.50 },
+    { tipo: 'blue', valor: 1235 },
+    { tipo: 'mep', valor: 1166.37 },
+    { tipo: 'tarjeta', valor: 1382.55 },
+    { tipo: 'ccl', valor: 1185.91 },
   ];
   
