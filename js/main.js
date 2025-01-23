@@ -1,5 +1,7 @@
-import { tiposDeCambio } from "./data.js";
+import { obtenerTiposDeCambio } from "./data.js";
 import { mostrarAlerta } from "./alertas.js";
+
+let tiposDeCambio = [];
 
 // Función para encontrar el valor de tipo de cambio
 function obtenerTasa(tipo) {
@@ -30,7 +32,9 @@ function convertirUSD(cantidad, tipoDeCambio) {
 }
 
 // Función para iniciar el conversor
-function iniciarConversor() {
+async function iniciarConversor() {
+  tiposDeCambio = await obtenerTiposDeCambio();
+  
   const nombreUsuarioInput = document.getElementById('nombreUsuario');
   const confirmarNombreBtn = document.getElementById('confirmarNombre');
   const tipoDeCambioSelect = document.getElementById('tipoDeCambio');

@@ -1,8 +1,13 @@
-export const tiposDeCambio = [
-    { tipo: 'oficial', valor: 1063.50 },
-    { tipo: 'blue', valor: 1235 },
-    { tipo: 'mep', valor: 1166.37 },
-    { tipo: 'tarjeta', valor: 1382.55 },
-    { tipo: 'ccl', valor: 1185.91 },
-  ];
-  
+export async function obtenerTiposDeCambio() {
+  try {
+    const response = await fetch('./tiposDeCambio.json');
+    if (!response.ok) {
+      throw new Error('Error al obtener los datos del JSON local');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error:', error);
+    return [];
+  }
+}
